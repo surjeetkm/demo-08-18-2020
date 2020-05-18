@@ -12,9 +12,8 @@ node{
 		app=docker.build("microservices-k8s/demo")
 	}
 	stage("Push Docker image to Container Registry"){
-		withDockerRegistry(credentialsId: 'dockerhub', url: 'https://registry.hub.docker.com') {
+		withDockerRegistry(credentialsId: 'dockerhub', url: 'https://registry-1.docker.io/v2/') {
     		app.push("latest")
 		}
-		
 	}
 }
