@@ -9,7 +9,7 @@ node{
 	}
 	stage("Run Junit and Integration Test cases"){}
 	stage("Build docker image"){
-		app=docker.build("microservices-k8s/demo")
+		app=docker.build("dockerrock123/demo")
 	}
 	stage("Push Docker image to Container Registry"){
 		withDockerRegistry(credentialsId: 'dockerhub', url: 'https://registry-1.docker.io/v2/') {
