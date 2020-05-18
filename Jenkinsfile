@@ -12,8 +12,8 @@ node{
 		app=docker.build("dockerrock123/demo")
 	}
 	stage("Push Docker image to Container Registry"){
-		withDockerRegistry(credentialsId: 'dockerhub', url: 'https://registry-1.docker.io/v2/') {
-    		app.push("latest")
+		docker.withRegistry('https://registry.hub.docker.com','dockerhub'){
+			app.push("latest")
 		}
 	}
 }
