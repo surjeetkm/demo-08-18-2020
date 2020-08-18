@@ -17,4 +17,8 @@ public class DemoApplication {
 	public String getMessage() {
 		return "Hello Demo!";
 	}
+	@GetMapping("/sayhi")
+	public String sayHi() {
+		return "Say Hi!";
+	}
 }
